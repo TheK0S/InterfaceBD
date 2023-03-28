@@ -35,6 +35,8 @@
             this.update = new System.Windows.Forms.Button();
             this.Create = new System.Windows.Forms.Button();
             this.connectionPanel = new System.Windows.Forms.Panel();
+            this.connection_SuccesfullMassage = new System.Windows.Forms.Label();
+            this.connection_ErrorMassage = new System.Windows.Forms.Label();
             this.connection_DataBaseNameField = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -42,12 +44,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.connection_PasswordField = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.connection_ServerNameАшудв = new System.Windows.Forms.TextBox();
+            this.connection_ServerName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.createPanel = new System.Windows.Forms.Panel();
+            this.create_SuccesfullMassage = new System.Windows.Forms.Label();
+            this.create_ErrorMassage = new System.Windows.Forms.Label();
             this.create_Table = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.create_DataBaseNameField = new System.Windows.Forms.TextBox();
+            this.create_DataBaseNameFieldFromTable = new System.Windows.Forms.TextBox();
             this.create_NewDB = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.create_TableNameField = new System.Windows.Forms.TextBox();
@@ -56,22 +60,44 @@
             this.create_DateBaseNameField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.readPanel = new System.Windows.Forms.Panel();
+            this.read_SuccesfullMassage = new System.Windows.Forms.Label();
+            this.read_ErrorMassage = new System.Windows.Forms.Label();
+            this.read_readData = new System.Windows.Forms.Button();
+            this.read_showColumnPanel = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.read_allColumns = new System.Windows.Forms.RadioButton();
             this.read_readTableList = new System.Windows.Forms.Button();
             this.read_TableName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.read_NameBD = new System.Windows.Forms.TextBox();
+            this.read_NameBDField = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.updatePanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.update_SuccesfullMassage = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.update_NewValueField = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.update_ErrorMassage = new System.Windows.Forms.Label();
+            this.update_OldValueField = new System.Windows.Forms.TextBox();
+            this.update_UpdateValue = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.update_TableNameField = new System.Windows.Forms.TextBox();
+            this.update_ColumnNameField = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.update_DBNameField = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.deletePanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.delete_SuccesfullMassage = new System.Windows.Forms.Label();
+            this.delete_DeleteDataBase = new System.Windows.Forms.Button();
+            this.delete_ErrorMassage = new System.Windows.Forms.Label();
+            this.delete_DeleteRows = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.delete_RowsValueField = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.delete_ColumnNameField = new System.Windows.Forms.TextBox();
+            this.delete_DeleteTable = new System.Windows.Forms.Button();
+            this.delete_TableNameField = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.delete_DBNameField = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             this.connectionPanel.SuspendLayout();
@@ -97,61 +123,68 @@
             // 
             // connection
             // 
+            this.connection.BackColor = System.Drawing.Color.Gainsboro;
             this.connection.Location = new System.Drawing.Point(12, 12);
             this.connection.Margin = new System.Windows.Forms.Padding(10);
             this.connection.Name = "connection";
             this.connection.Size = new System.Drawing.Size(153, 32);
             this.connection.TabIndex = 3;
             this.connection.Text = "Подключение";
-            this.connection.UseVisualStyleBackColor = true;
+            this.connection.UseVisualStyleBackColor = false;
             this.connection.Click += new System.EventHandler(this.connection_Click);
             // 
             // delete
             // 
+            this.delete.BackColor = System.Drawing.Color.Gainsboro;
             this.delete.Location = new System.Drawing.Point(12, 212);
             this.delete.Margin = new System.Windows.Forms.Padding(10);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(153, 32);
             this.delete.TabIndex = 2;
             this.delete.Text = "Удалить";
-            this.delete.UseVisualStyleBackColor = true;
+            this.delete.UseVisualStyleBackColor = false;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // read
             // 
+            this.read.BackColor = System.Drawing.Color.Gainsboro;
             this.read.Location = new System.Drawing.Point(12, 112);
             this.read.Margin = new System.Windows.Forms.Padding(10);
             this.read.Name = "read";
             this.read.Size = new System.Drawing.Size(153, 32);
             this.read.TabIndex = 1;
             this.read.Text = "Читать";
-            this.read.UseVisualStyleBackColor = true;
+            this.read.UseVisualStyleBackColor = false;
             this.read.Click += new System.EventHandler(this.read_Click);
             // 
             // update
             // 
+            this.update.BackColor = System.Drawing.Color.Gainsboro;
             this.update.Location = new System.Drawing.Point(12, 162);
             this.update.Margin = new System.Windows.Forms.Padding(10);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(153, 32);
             this.update.TabIndex = 1;
             this.update.Text = "Модифицировать";
-            this.update.UseVisualStyleBackColor = true;
+            this.update.UseVisualStyleBackColor = false;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // Create
             // 
+            this.Create.BackColor = System.Drawing.Color.Gainsboro;
             this.Create.Location = new System.Drawing.Point(12, 62);
             this.Create.Margin = new System.Windows.Forms.Padding(10);
             this.Create.Name = "Create";
             this.Create.Size = new System.Drawing.Size(153, 32);
             this.Create.TabIndex = 0;
             this.Create.Text = "Создать";
-            this.Create.UseVisualStyleBackColor = true;
+            this.Create.UseVisualStyleBackColor = false;
             this.Create.Click += new System.EventHandler(this.Create_Click);
             // 
             // connectionPanel
             // 
+            this.connectionPanel.Controls.Add(this.connection_SuccesfullMassage);
+            this.connectionPanel.Controls.Add(this.connection_ErrorMassage);
             this.connectionPanel.Controls.Add(this.connection_DataBaseNameField);
             this.connectionPanel.Controls.Add(this.label12);
             this.connectionPanel.Controls.Add(this.label11);
@@ -159,13 +192,39 @@
             this.connectionPanel.Controls.Add(this.label10);
             this.connectionPanel.Controls.Add(this.connection_PasswordField);
             this.connectionPanel.Controls.Add(this.label7);
-            this.connectionPanel.Controls.Add(this.connection_ServerNameАшудв);
+            this.connectionPanel.Controls.Add(this.connection_ServerName);
             this.connectionPanel.Controls.Add(this.label1);
             this.connectionPanel.Location = new System.Drawing.Point(186, 12);
             this.connectionPanel.Name = "connectionPanel";
             this.connectionPanel.Size = new System.Drawing.Size(414, 481);
             this.connectionPanel.TabIndex = 1;
             this.connectionPanel.Visible = false;
+            // 
+            // connection_SuccesfullMassage
+            // 
+            this.connection_SuccesfullMassage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.connection_SuccesfullMassage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.connection_SuccesfullMassage.ForeColor = System.Drawing.Color.SeaGreen;
+            this.connection_SuccesfullMassage.Location = new System.Drawing.Point(0, 0);
+            this.connection_SuccesfullMassage.Name = "connection_SuccesfullMassage";
+            this.connection_SuccesfullMassage.Size = new System.Drawing.Size(414, 23);
+            this.connection_SuccesfullMassage.TabIndex = 12;
+            this.connection_SuccesfullMassage.Text = "Successfully";
+            this.connection_SuccesfullMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.connection_SuccesfullMassage.Visible = false;
+            // 
+            // connection_ErrorMassage
+            // 
+            this.connection_ErrorMassage.BackColor = System.Drawing.Color.LavenderBlush;
+            this.connection_ErrorMassage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.connection_ErrorMassage.ForeColor = System.Drawing.Color.Red;
+            this.connection_ErrorMassage.Location = new System.Drawing.Point(0, 438);
+            this.connection_ErrorMassage.Name = "connection_ErrorMassage";
+            this.connection_ErrorMassage.Size = new System.Drawing.Size(414, 43);
+            this.connection_ErrorMassage.TabIndex = 11;
+            this.connection_ErrorMassage.Text = "Error";
+            this.connection_ErrorMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.connection_ErrorMassage.Visible = false;
             // 
             // connection_DataBaseNameField
             // 
@@ -175,6 +234,7 @@
             this.connection_DataBaseNameField.Name = "connection_DataBaseNameField";
             this.connection_DataBaseNameField.Size = new System.Drawing.Size(308, 27);
             this.connection_DataBaseNameField.TabIndex = 9;
+            this.connection_DataBaseNameField.TextChanged += new System.EventHandler(this.connection_DataBaseNameField_TextChanged);
             // 
             // label12
             // 
@@ -190,7 +250,7 @@
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.Location = new System.Drawing.Point(53, 233);
+            this.label11.Location = new System.Drawing.Point(53, 227);
             this.label11.Margin = new System.Windows.Forms.Padding(10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(308, 54);
@@ -201,7 +261,7 @@
             // connection_IdField
             // 
             this.connection_IdField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.connection_IdField.Location = new System.Drawing.Point(53, 334);
+            this.connection_IdField.Location = new System.Drawing.Point(53, 314);
             this.connection_IdField.Margin = new System.Windows.Forms.Padding(10);
             this.connection_IdField.Name = "connection_IdField";
             this.connection_IdField.Size = new System.Drawing.Size(308, 27);
@@ -210,7 +270,7 @@
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.Location = new System.Drawing.Point(53, 301);
+            this.label10.Location = new System.Drawing.Point(53, 284);
             this.label10.Margin = new System.Windows.Forms.Padding(10);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(308, 20);
@@ -221,7 +281,7 @@
             // connection_PasswordField
             // 
             this.connection_PasswordField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.connection_PasswordField.Location = new System.Drawing.Point(53, 421);
+            this.connection_PasswordField.Location = new System.Drawing.Point(53, 393);
             this.connection_PasswordField.Margin = new System.Windows.Forms.Padding(10);
             this.connection_PasswordField.Name = "connection_PasswordField";
             this.connection_PasswordField.Size = new System.Drawing.Size(308, 27);
@@ -230,7 +290,7 @@
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Location = new System.Drawing.Point(53, 387);
+            this.label7.Location = new System.Drawing.Point(53, 361);
             this.label7.Margin = new System.Windows.Forms.Padding(10);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(308, 20);
@@ -238,14 +298,15 @@
             this.label7.Text = "Введите пароль";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // connection_ServerNameАшудв
+            // connection_ServerName
             // 
-            this.connection_ServerNameАшудв.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.connection_ServerNameАшудв.Location = new System.Drawing.Point(53, 88);
-            this.connection_ServerNameАшудв.Margin = new System.Windows.Forms.Padding(10);
-            this.connection_ServerNameАшудв.Name = "connection_ServerNameАшудв";
-            this.connection_ServerNameАшудв.Size = new System.Drawing.Size(308, 27);
-            this.connection_ServerNameАшудв.TabIndex = 2;
+            this.connection_ServerName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.connection_ServerName.Location = new System.Drawing.Point(53, 88);
+            this.connection_ServerName.Margin = new System.Windows.Forms.Padding(10);
+            this.connection_ServerName.Name = "connection_ServerName";
+            this.connection_ServerName.Size = new System.Drawing.Size(308, 27);
+            this.connection_ServerName.TabIndex = 2;
+            this.connection_ServerName.TextChanged += new System.EventHandler(this.connection_ServerName_TextChanged);
             // 
             // label1
             // 
@@ -260,9 +321,11 @@
             // 
             // createPanel
             // 
+            this.createPanel.Controls.Add(this.create_SuccesfullMassage);
+            this.createPanel.Controls.Add(this.create_ErrorMassage);
             this.createPanel.Controls.Add(this.create_Table);
             this.createPanel.Controls.Add(this.label6);
-            this.createPanel.Controls.Add(this.create_DataBaseNameField);
+            this.createPanel.Controls.Add(this.create_DataBaseNameFieldFromTable);
             this.createPanel.Controls.Add(this.create_NewDB);
             this.createPanel.Controls.Add(this.label4);
             this.createPanel.Controls.Add(this.create_TableNameField);
@@ -276,21 +339,49 @@
             this.createPanel.TabIndex = 4;
             this.createPanel.Visible = false;
             // 
+            // create_SuccesfullMassage
+            // 
+            this.create_SuccesfullMassage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.create_SuccesfullMassage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.create_SuccesfullMassage.ForeColor = System.Drawing.Color.SeaGreen;
+            this.create_SuccesfullMassage.Location = new System.Drawing.Point(0, 0);
+            this.create_SuccesfullMassage.Name = "create_SuccesfullMassage";
+            this.create_SuccesfullMassage.Size = new System.Drawing.Size(571, 23);
+            this.create_SuccesfullMassage.TabIndex = 13;
+            this.create_SuccesfullMassage.Text = "Successfully";
+            this.create_SuccesfullMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.create_SuccesfullMassage.Visible = false;
+            // 
+            // create_ErrorMassage
+            // 
+            this.create_ErrorMassage.BackColor = System.Drawing.Color.LavenderBlush;
+            this.create_ErrorMassage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.create_ErrorMassage.ForeColor = System.Drawing.Color.Red;
+            this.create_ErrorMassage.Location = new System.Drawing.Point(0, 438);
+            this.create_ErrorMassage.Name = "create_ErrorMassage";
+            this.create_ErrorMassage.Size = new System.Drawing.Size(571, 43);
+            this.create_ErrorMassage.TabIndex = 12;
+            this.create_ErrorMassage.Text = "Error";
+            this.create_ErrorMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.create_ErrorMassage.Visible = false;
+            // 
             // create_Table
             // 
             this.create_Table.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.create_Table.Location = new System.Drawing.Point(209, 397);
+            this.create_Table.BackColor = System.Drawing.Color.Gainsboro;
+            this.create_Table.Location = new System.Drawing.Point(220, 365);
             this.create_Table.Margin = new System.Windows.Forms.Padding(10);
             this.create_Table.Name = "create_Table";
             this.create_Table.Size = new System.Drawing.Size(153, 32);
             this.create_Table.TabIndex = 10;
             this.create_Table.Text = "Создать таблицу";
-            this.create_Table.UseVisualStyleBackColor = true;
+            this.create_Table.UseVisualStyleBackColor = false;
+            this.create_Table.Click += new System.EventHandler(this.create_Table_Click);
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Location = new System.Drawing.Point(28, 296);
+            this.label6.Location = new System.Drawing.Point(39, 264);
             this.label6.Margin = new System.Windows.Forms.Padding(10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 20);
@@ -298,30 +389,32 @@
             this.label6.Text = "Имя базы данных";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // create_DataBaseNameField
+            // create_DataBaseNameFieldFromTable
             // 
-            this.create_DataBaseNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.create_DataBaseNameField.Location = new System.Drawing.Point(209, 293);
-            this.create_DataBaseNameField.Margin = new System.Windows.Forms.Padding(10);
-            this.create_DataBaseNameField.Name = "create_DataBaseNameField";
-            this.create_DataBaseNameField.Size = new System.Drawing.Size(308, 27);
-            this.create_DataBaseNameField.TabIndex = 8;
+            this.create_DataBaseNameFieldFromTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.create_DataBaseNameFieldFromTable.Location = new System.Drawing.Point(220, 261);
+            this.create_DataBaseNameFieldFromTable.Margin = new System.Windows.Forms.Padding(10);
+            this.create_DataBaseNameFieldFromTable.Name = "create_DataBaseNameFieldFromTable";
+            this.create_DataBaseNameFieldFromTable.Size = new System.Drawing.Size(308, 27);
+            this.create_DataBaseNameFieldFromTable.TabIndex = 8;
             // 
             // create_NewDB
             // 
             this.create_NewDB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.create_NewDB.Location = new System.Drawing.Point(209, 167);
+            this.create_NewDB.BackColor = System.Drawing.Color.Gainsboro;
+            this.create_NewDB.Location = new System.Drawing.Point(220, 135);
             this.create_NewDB.Margin = new System.Windows.Forms.Padding(10);
             this.create_NewDB.Name = "create_NewDB";
             this.create_NewDB.Size = new System.Drawing.Size(153, 32);
             this.create_NewDB.TabIndex = 4;
             this.create_NewDB.Text = "Создать БД";
-            this.create_NewDB.UseVisualStyleBackColor = true;
+            this.create_NewDB.UseVisualStyleBackColor = false;
+            this.create_NewDB.Click += new System.EventHandler(this.create_NewDB_Click);
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Location = new System.Drawing.Point(28, 347);
+            this.label4.Location = new System.Drawing.Point(39, 315);
             this.label4.Margin = new System.Windows.Forms.Padding(10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(161, 20);
@@ -332,7 +425,7 @@
             // create_TableNameField
             // 
             this.create_TableNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.create_TableNameField.Location = new System.Drawing.Point(209, 344);
+            this.create_TableNameField.Location = new System.Drawing.Point(220, 312);
             this.create_TableNameField.Margin = new System.Windows.Forms.Padding(10);
             this.create_TableNameField.Name = "create_TableNameField";
             this.create_TableNameField.Size = new System.Drawing.Size(308, 27);
@@ -342,7 +435,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(222, 258);
+            this.label5.Location = new System.Drawing.Point(233, 226);
             this.label5.Margin = new System.Windows.Forms.Padding(10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 20);
@@ -353,7 +446,7 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Location = new System.Drawing.Point(28, 123);
+            this.label3.Location = new System.Drawing.Point(39, 91);
             this.label3.Margin = new System.Windows.Forms.Padding(10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 20);
@@ -364,7 +457,7 @@
             // create_DateBaseNameField
             // 
             this.create_DateBaseNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.create_DateBaseNameField.Location = new System.Drawing.Point(209, 120);
+            this.create_DateBaseNameField.Location = new System.Drawing.Point(220, 88);
             this.create_DateBaseNameField.Margin = new System.Windows.Forms.Padding(10);
             this.create_DateBaseNameField.Name = "create_DateBaseNameField";
             this.create_DateBaseNameField.Size = new System.Drawing.Size(308, 27);
@@ -374,7 +467,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 83);
+            this.label2.Location = new System.Drawing.Point(221, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 20);
@@ -384,32 +477,111 @@
             // 
             // readPanel
             // 
+            this.readPanel.Controls.Add(this.read_SuccesfullMassage);
+            this.readPanel.Controls.Add(this.read_ErrorMassage);
+            this.readPanel.Controls.Add(this.read_readData);
+            this.readPanel.Controls.Add(this.read_showColumnPanel);
+            this.readPanel.Controls.Add(this.radioButton2);
+            this.readPanel.Controls.Add(this.read_allColumns);
             this.readPanel.Controls.Add(this.read_readTableList);
             this.readPanel.Controls.Add(this.read_TableName);
             this.readPanel.Controls.Add(this.label8);
-            this.readPanel.Controls.Add(this.read_NameBD);
+            this.readPanel.Controls.Add(this.read_NameBDField);
             this.readPanel.Controls.Add(this.label9);
             this.readPanel.Location = new System.Drawing.Point(1207, 12);
             this.readPanel.Name = "readPanel";
-            this.readPanel.Size = new System.Drawing.Size(718, 481);
+            this.readPanel.Size = new System.Drawing.Size(695, 481);
             this.readPanel.TabIndex = 5;
             this.readPanel.Visible = false;
+            // 
+            // read_SuccesfullMassage
+            // 
+            this.read_SuccesfullMassage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.read_SuccesfullMassage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.read_SuccesfullMassage.ForeColor = System.Drawing.Color.SeaGreen;
+            this.read_SuccesfullMassage.Location = new System.Drawing.Point(0, 0);
+            this.read_SuccesfullMassage.Name = "read_SuccesfullMassage";
+            this.read_SuccesfullMassage.Size = new System.Drawing.Size(695, 23);
+            this.read_SuccesfullMassage.TabIndex = 16;
+            this.read_SuccesfullMassage.Text = "Successfully";
+            this.read_SuccesfullMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.read_SuccesfullMassage.Visible = false;
+            // 
+            // read_ErrorMassage
+            // 
+            this.read_ErrorMassage.BackColor = System.Drawing.Color.LavenderBlush;
+            this.read_ErrorMassage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.read_ErrorMassage.ForeColor = System.Drawing.Color.Red;
+            this.read_ErrorMassage.Location = new System.Drawing.Point(0, 438);
+            this.read_ErrorMassage.Name = "read_ErrorMassage";
+            this.read_ErrorMassage.Size = new System.Drawing.Size(695, 43);
+            this.read_ErrorMassage.TabIndex = 13;
+            this.read_ErrorMassage.Text = "Error";
+            this.read_ErrorMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.read_ErrorMassage.Visible = false;
+            // 
+            // read_readData
+            // 
+            this.read_readData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.read_readData.BackColor = System.Drawing.Color.Gainsboro;
+            this.read_readData.Location = new System.Drawing.Point(303, 243);
+            this.read_readData.Margin = new System.Windows.Forms.Padding(10);
+            this.read_readData.Name = "read_readData";
+            this.read_readData.Size = new System.Drawing.Size(142, 32);
+            this.read_readData.TabIndex = 15;
+            this.read_readData.Text = "Читать данные";
+            this.read_readData.UseVisualStyleBackColor = false;
+            this.read_readData.Click += new System.EventHandler(this.read_readData_Click);
+            // 
+            // read_showColumnPanel
+            // 
+            this.read_showColumnPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.read_showColumnPanel.Location = new System.Drawing.Point(106, 284);
+            this.read_showColumnPanel.Name = "read_showColumnPanel";
+            this.read_showColumnPanel.Size = new System.Drawing.Size(499, 140);
+            this.read_showColumnPanel.TabIndex = 14;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(370, 203);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(150, 24);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.Text = "Выбрать столбцы";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // read_allColumns
+            // 
+            this.read_allColumns.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.read_allColumns.AutoSize = true;
+            this.read_allColumns.Checked = true;
+            this.read_allColumns.Location = new System.Drawing.Point(223, 203);
+            this.read_allColumns.Name = "read_allColumns";
+            this.read_allColumns.Size = new System.Drawing.Size(114, 24);
+            this.read_allColumns.TabIndex = 12;
+            this.read_allColumns.TabStop = true;
+            this.read_allColumns.Text = "Все столбцы";
+            this.read_allColumns.UseVisualStyleBackColor = true;
             // 
             // read_readTableList
             // 
             this.read_readTableList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.read_readTableList.Location = new System.Drawing.Point(259, 94);
+            this.read_readTableList.BackColor = System.Drawing.Color.Gainsboro;
+            this.read_readTableList.Location = new System.Drawing.Point(214, 78);
             this.read_readTableList.Margin = new System.Windows.Forms.Padding(10);
             this.read_readTableList.Name = "read_readTableList";
             this.read_readTableList.Size = new System.Drawing.Size(308, 32);
             this.read_readTableList.TabIndex = 11;
             this.read_readTableList.Text = "Читать список таблиц из БД";
-            this.read_readTableList.UseVisualStyleBackColor = true;
+            this.read_readTableList.UseVisualStyleBackColor = false;
+            this.read_readTableList.Click += new System.EventHandler(this.read_readTableList_Click);
             // 
             // read_TableName
             // 
             this.read_TableName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.read_TableName.Location = new System.Drawing.Point(259, 171);
+            this.read_TableName.Location = new System.Drawing.Point(214, 148);
             this.read_TableName.Margin = new System.Windows.Forms.Padding(10);
             this.read_TableName.Name = "read_TableName";
             this.read_TableName.Size = new System.Drawing.Size(308, 27);
@@ -418,7 +590,7 @@
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.Location = new System.Drawing.Point(86, 174);
+            this.label8.Location = new System.Drawing.Point(41, 151);
             this.label8.Margin = new System.Windows.Forms.Padding(10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(155, 20);
@@ -426,19 +598,19 @@
             this.label8.Text = "Имя таблицы";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // read_NameBD
+            // read_NameBDField
             // 
-            this.read_NameBD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.read_NameBD.Location = new System.Drawing.Point(259, 47);
-            this.read_NameBD.Margin = new System.Windows.Forms.Padding(10);
-            this.read_NameBD.Name = "read_NameBD";
-            this.read_NameBD.Size = new System.Drawing.Size(308, 27);
-            this.read_NameBD.TabIndex = 2;
+            this.read_NameBDField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.read_NameBDField.Location = new System.Drawing.Point(214, 31);
+            this.read_NameBDField.Margin = new System.Windows.Forms.Padding(10);
+            this.read_NameBDField.Name = "read_NameBDField";
+            this.read_NameBDField.Size = new System.Drawing.Size(308, 27);
+            this.read_NameBDField.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.Location = new System.Drawing.Point(86, 50);
+            this.label9.Location = new System.Drawing.Point(41, 34);
             this.label9.Margin = new System.Windows.Forms.Padding(10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(155, 20);
@@ -448,136 +620,336 @@
             // 
             // updatePanel
             // 
-            this.updatePanel.Controls.Add(this.button2);
-            this.updatePanel.Controls.Add(this.textBox8);
+            this.updatePanel.Controls.Add(this.update_SuccesfullMassage);
+            this.updatePanel.Controls.Add(this.label21);
+            this.updatePanel.Controls.Add(this.update_NewValueField);
+            this.updatePanel.Controls.Add(this.label19);
+            this.updatePanel.Controls.Add(this.update_ErrorMassage);
+            this.updatePanel.Controls.Add(this.update_OldValueField);
+            this.updatePanel.Controls.Add(this.update_UpdateValue);
+            this.updatePanel.Controls.Add(this.label20);
+            this.updatePanel.Controls.Add(this.update_TableNameField);
+            this.updatePanel.Controls.Add(this.update_ColumnNameField);
             this.updatePanel.Controls.Add(this.label13);
-            this.updatePanel.Controls.Add(this.textBox9);
+            this.updatePanel.Controls.Add(this.update_DBNameField);
             this.updatePanel.Controls.Add(this.label14);
             this.updatePanel.Location = new System.Drawing.Point(186, 513);
             this.updatePanel.Name = "updatePanel";
-            this.updatePanel.Size = new System.Drawing.Size(414, 481);
+            this.updatePanel.Size = new System.Drawing.Size(712, 481);
             this.updatePanel.TabIndex = 12;
             this.updatePanel.Visible = false;
             // 
-            // button2
+            // update_SuccesfullMassage
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(53, 121);
-            this.button2.Margin = new System.Windows.Forms.Padding(10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(308, 32);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Читать список таблиц из БД";
-            this.button2.UseVisualStyleBackColor = true;
+            this.update_SuccesfullMassage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.update_SuccesfullMassage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.update_SuccesfullMassage.ForeColor = System.Drawing.Color.SeaGreen;
+            this.update_SuccesfullMassage.Location = new System.Drawing.Point(0, 0);
+            this.update_SuccesfullMassage.Name = "update_SuccesfullMassage";
+            this.update_SuccesfullMassage.Size = new System.Drawing.Size(712, 23);
+            this.update_SuccesfullMassage.TabIndex = 25;
+            this.update_SuccesfullMassage.Text = "Successfully";
+            this.update_SuccesfullMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.update_SuccesfullMassage.Visible = false;
             // 
-            // textBox8
+            // label21
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.Location = new System.Drawing.Point(53, 211);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(308, 27);
-            this.textBox8.TabIndex = 4;
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label21.Location = new System.Drawing.Point(80, 292);
+            this.label21.Margin = new System.Windows.Forms.Padding(10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(147, 20);
+            this.label21.TabIndex = 24;
+            this.label21.Text = "Новое значение";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // update_NewValueField
+            // 
+            this.update_NewValueField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.update_NewValueField.Location = new System.Drawing.Point(262, 289);
+            this.update_NewValueField.Margin = new System.Windows.Forms.Padding(10);
+            this.update_NewValueField.Name = "update_NewValueField";
+            this.update_NewValueField.Size = new System.Drawing.Size(308, 27);
+            this.update_NewValueField.TabIndex = 23;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.Location = new System.Drawing.Point(81, 178);
+            this.label19.Margin = new System.Windows.Forms.Padding(10);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(147, 20);
+            this.label19.TabIndex = 21;
+            this.label19.Text = "Имя столбца";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // update_ErrorMassage
+            // 
+            this.update_ErrorMassage.BackColor = System.Drawing.Color.LavenderBlush;
+            this.update_ErrorMassage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.update_ErrorMassage.ForeColor = System.Drawing.Color.Red;
+            this.update_ErrorMassage.Location = new System.Drawing.Point(0, 438);
+            this.update_ErrorMassage.Name = "update_ErrorMassage";
+            this.update_ErrorMassage.Size = new System.Drawing.Size(712, 43);
+            this.update_ErrorMassage.TabIndex = 16;
+            this.update_ErrorMassage.Text = "Error";
+            this.update_ErrorMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.update_ErrorMassage.Visible = false;
+            // 
+            // update_OldValueField
+            // 
+            this.update_OldValueField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.update_OldValueField.Location = new System.Drawing.Point(262, 232);
+            this.update_OldValueField.Margin = new System.Windows.Forms.Padding(10);
+            this.update_OldValueField.Name = "update_OldValueField";
+            this.update_OldValueField.Size = new System.Drawing.Size(308, 27);
+            this.update_OldValueField.TabIndex = 20;
+            // 
+            // update_UpdateValue
+            // 
+            this.update_UpdateValue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.update_UpdateValue.BackColor = System.Drawing.Color.Gainsboro;
+            this.update_UpdateValue.Location = new System.Drawing.Point(262, 340);
+            this.update_UpdateValue.Margin = new System.Windows.Forms.Padding(10);
+            this.update_UpdateValue.Name = "update_UpdateValue";
+            this.update_UpdateValue.Size = new System.Drawing.Size(308, 32);
+            this.update_UpdateValue.TabIndex = 11;
+            this.update_UpdateValue.Text = "Изменить значение";
+            this.update_UpdateValue.UseVisualStyleBackColor = false;
+            this.update_UpdateValue.Click += new System.EventHandler(this.update_UpdateValue_Click);
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.Location = new System.Drawing.Point(26, 220);
+            this.label20.Margin = new System.Windows.Forms.Padding(10);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(201, 52);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "Значение столбца в строке, которое нужно изменить";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // update_TableNameField
+            // 
+            this.update_TableNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.update_TableNameField.Location = new System.Drawing.Point(262, 122);
+            this.update_TableNameField.Margin = new System.Windows.Forms.Padding(10);
+            this.update_TableNameField.Name = "update_TableNameField";
+            this.update_TableNameField.Size = new System.Drawing.Size(308, 27);
+            this.update_TableNameField.TabIndex = 4;
+            // 
+            // update_ColumnNameField
+            // 
+            this.update_ColumnNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.update_ColumnNameField.Location = new System.Drawing.Point(262, 176);
+            this.update_ColumnNameField.Margin = new System.Windows.Forms.Padding(10);
+            this.update_ColumnNameField.Name = "update_ColumnNameField";
+            this.update_ColumnNameField.Size = new System.Drawing.Size(308, 27);
+            this.update_ColumnNameField.TabIndex = 18;
             // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.Location = new System.Drawing.Point(53, 176);
+            this.label13.Location = new System.Drawing.Point(72, 127);
             this.label13.Margin = new System.Windows.Forms.Padding(10);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(308, 20);
+            this.label13.Size = new System.Drawing.Size(155, 20);
             this.label13.TabIndex = 3;
-            this.label13.Text = "Читать список таблиц из БД";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Text = "Имя таблицы";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox9
+            // update_DBNameField
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox9.Location = new System.Drawing.Point(53, 72);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(308, 27);
-            this.textBox9.TabIndex = 2;
+            this.update_DBNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.update_DBNameField.Location = new System.Drawing.Point(262, 66);
+            this.update_DBNameField.Margin = new System.Windows.Forms.Padding(10);
+            this.update_DBNameField.Name = "update_DBNameField";
+            this.update_DBNameField.Size = new System.Drawing.Size(308, 27);
+            this.update_DBNameField.TabIndex = 2;
             // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.Location = new System.Drawing.Point(53, 37);
+            this.label14.Location = new System.Drawing.Point(72, 71);
             this.label14.Margin = new System.Windows.Forms.Padding(10);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(308, 20);
+            this.label14.Size = new System.Drawing.Size(155, 20);
             this.label14.TabIndex = 0;
             this.label14.Text = "Имя базы данных";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // deletePanel
             // 
-            this.deletePanel.Controls.Add(this.button1);
-            this.deletePanel.Controls.Add(this.textBox1);
+            this.deletePanel.Controls.Add(this.delete_SuccesfullMassage);
+            this.deletePanel.Controls.Add(this.delete_DeleteDataBase);
+            this.deletePanel.Controls.Add(this.delete_ErrorMassage);
+            this.deletePanel.Controls.Add(this.delete_DeleteRows);
+            this.deletePanel.Controls.Add(this.label17);
+            this.deletePanel.Controls.Add(this.delete_RowsValueField);
+            this.deletePanel.Controls.Add(this.label18);
+            this.deletePanel.Controls.Add(this.delete_ColumnNameField);
+            this.deletePanel.Controls.Add(this.delete_DeleteTable);
+            this.deletePanel.Controls.Add(this.delete_TableNameField);
             this.deletePanel.Controls.Add(this.label15);
-            this.deletePanel.Controls.Add(this.textBox2);
+            this.deletePanel.Controls.Add(this.delete_DBNameField);
             this.deletePanel.Controls.Add(this.label16);
-            this.deletePanel.Location = new System.Drawing.Point(620, 513);
+            this.deletePanel.Location = new System.Drawing.Point(959, 513);
             this.deletePanel.Name = "deletePanel";
-            this.deletePanel.Size = new System.Drawing.Size(571, 481);
+            this.deletePanel.Size = new System.Drawing.Size(707, 481);
             this.deletePanel.TabIndex = 13;
             this.deletePanel.Visible = false;
             // 
-            // button1
+            // delete_SuccesfullMassage
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(128, 195);
-            this.button1.Margin = new System.Windows.Forms.Padding(10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(308, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Читать список таблиц из БД";
-            this.button1.UseVisualStyleBackColor = true;
+            this.delete_SuccesfullMassage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.delete_SuccesfullMassage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.delete_SuccesfullMassage.ForeColor = System.Drawing.Color.SeaGreen;
+            this.delete_SuccesfullMassage.Location = new System.Drawing.Point(0, 0);
+            this.delete_SuccesfullMassage.Name = "delete_SuccesfullMassage";
+            this.delete_SuccesfullMassage.Size = new System.Drawing.Size(707, 23);
+            this.delete_SuccesfullMassage.TabIndex = 19;
+            this.delete_SuccesfullMassage.Text = "Successfully";
+            this.delete_SuccesfullMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.delete_SuccesfullMassage.Visible = false;
             // 
-            // textBox1
+            // delete_DeleteDataBase
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(128, 285);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 27);
-            this.textBox1.TabIndex = 4;
+            this.delete_DeleteDataBase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.delete_DeleteDataBase.BackColor = System.Drawing.Color.Gainsboro;
+            this.delete_DeleteDataBase.Location = new System.Drawing.Point(314, 100);
+            this.delete_DeleteDataBase.Margin = new System.Windows.Forms.Padding(10);
+            this.delete_DeleteDataBase.Name = "delete_DeleteDataBase";
+            this.delete_DeleteDataBase.Size = new System.Drawing.Size(177, 32);
+            this.delete_DeleteDataBase.TabIndex = 18;
+            this.delete_DeleteDataBase.Text = "Удалить базу данных";
+            this.delete_DeleteDataBase.UseVisualStyleBackColor = false;
+            this.delete_DeleteDataBase.Click += new System.EventHandler(this.delete_DeleteDataBase_Click);
+            // 
+            // delete_ErrorMassage
+            // 
+            this.delete_ErrorMassage.BackColor = System.Drawing.Color.LavenderBlush;
+            this.delete_ErrorMassage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.delete_ErrorMassage.ForeColor = System.Drawing.Color.Red;
+            this.delete_ErrorMassage.Location = new System.Drawing.Point(0, 438);
+            this.delete_ErrorMassage.Name = "delete_ErrorMassage";
+            this.delete_ErrorMassage.Size = new System.Drawing.Size(707, 43);
+            this.delete_ErrorMassage.TabIndex = 17;
+            this.delete_ErrorMassage.Text = "Error";
+            this.delete_ErrorMassage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.delete_ErrorMassage.Visible = false;
+            this.delete_ErrorMassage.Click += new System.EventHandler(this.delete_ErrorMassage_Click);
+            // 
+            // delete_DeleteRows
+            // 
+            this.delete_DeleteRows.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.delete_DeleteRows.BackColor = System.Drawing.Color.Gainsboro;
+            this.delete_DeleteRows.Location = new System.Drawing.Point(314, 368);
+            this.delete_DeleteRows.Margin = new System.Windows.Forms.Padding(10);
+            this.delete_DeleteRows.Name = "delete_DeleteRows";
+            this.delete_DeleteRows.Size = new System.Drawing.Size(177, 32);
+            this.delete_DeleteRows.TabIndex = 17;
+            this.delete_DeleteRows.Text = "Удалить строки";
+            this.delete_DeleteRows.UseVisualStyleBackColor = false;
+            this.delete_DeleteRows.Click += new System.EventHandler(this.delete_DeleteRows_Click);
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.Location = new System.Drawing.Point(70, 271);
+            this.label17.Margin = new System.Windows.Forms.Padding(10);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(147, 20);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Имя столбца";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // delete_RowsValueField
+            // 
+            this.delete_RowsValueField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.delete_RowsValueField.Location = new System.Drawing.Point(251, 321);
+            this.delete_RowsValueField.Margin = new System.Windows.Forms.Padding(10);
+            this.delete_RowsValueField.Name = "delete_RowsValueField";
+            this.delete_RowsValueField.Size = new System.Drawing.Size(308, 27);
+            this.delete_RowsValueField.TabIndex = 15;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.Location = new System.Drawing.Point(9, 309);
+            this.label18.Margin = new System.Windows.Forms.Padding(10);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(207, 47);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "Значение столбца в строке, которую нужно удалить";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // delete_ColumnNameField
+            // 
+            this.delete_ColumnNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.delete_ColumnNameField.Location = new System.Drawing.Point(251, 267);
+            this.delete_ColumnNameField.Margin = new System.Windows.Forms.Padding(10);
+            this.delete_ColumnNameField.Name = "delete_ColumnNameField";
+            this.delete_ColumnNameField.Size = new System.Drawing.Size(308, 27);
+            this.delete_ColumnNameField.TabIndex = 13;
+            // 
+            // delete_DeleteTable
+            // 
+            this.delete_DeleteTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.delete_DeleteTable.BackColor = System.Drawing.Color.Gainsboro;
+            this.delete_DeleteTable.Location = new System.Drawing.Point(314, 204);
+            this.delete_DeleteTable.Margin = new System.Windows.Forms.Padding(10);
+            this.delete_DeleteTable.Name = "delete_DeleteTable";
+            this.delete_DeleteTable.Size = new System.Drawing.Size(177, 32);
+            this.delete_DeleteTable.TabIndex = 11;
+            this.delete_DeleteTable.Text = "Удалить таблицу";
+            this.delete_DeleteTable.UseVisualStyleBackColor = false;
+            this.delete_DeleteTable.Click += new System.EventHandler(this.delete_DeleteTable_Click);
+            // 
+            // delete_TableNameField
+            // 
+            this.delete_TableNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.delete_TableNameField.Location = new System.Drawing.Point(251, 157);
+            this.delete_TableNameField.Margin = new System.Windows.Forms.Padding(10);
+            this.delete_TableNameField.Name = "delete_TableNameField";
+            this.delete_TableNameField.Size = new System.Drawing.Size(308, 27);
+            this.delete_TableNameField.TabIndex = 4;
             // 
             // label15
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.Location = new System.Drawing.Point(128, 250);
+            this.label15.Location = new System.Drawing.Point(70, 157);
             this.label15.Margin = new System.Windows.Forms.Padding(10);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(308, 20);
+            this.label15.Size = new System.Drawing.Size(147, 20);
             this.label15.TabIndex = 3;
-            this.label15.Text = "Читать список таблиц из БД";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label15.Text = "Имя таблицы";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox2
+            // delete_DBNameField
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(128, 146);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(308, 27);
-            this.textBox2.TabIndex = 2;
+            this.delete_DBNameField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.delete_DBNameField.Location = new System.Drawing.Point(251, 53);
+            this.delete_DBNameField.Margin = new System.Windows.Forms.Padding(10);
+            this.delete_DBNameField.Name = "delete_DBNameField";
+            this.delete_DBNameField.Size = new System.Drawing.Size(308, 27);
+            this.delete_DBNameField.TabIndex = 2;
             // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.Location = new System.Drawing.Point(128, 111);
+            this.label16.Location = new System.Drawing.Point(58, 56);
             this.label16.Margin = new System.Windows.Forms.Padding(10);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(308, 20);
+            this.label16.Size = new System.Drawing.Size(159, 20);
             this.label16.TabIndex = 0;
             this.label16.Text = "Имя базы данных";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1924, 1023);
             this.Controls.Add(this.deletePanel);
             this.Controls.Add(this.updatePanel);
@@ -613,11 +985,11 @@
         private Button Create;
         private Panel connectionPanel;
         private Button connection;
-        private TextBox connection_ServerNameАшудв;
+        private TextBox connection_ServerName;
         private Label label1;
         private Panel createPanel;
         private Label label6;
-        private TextBox create_DataBaseNameField;
+        private TextBox create_DataBaseNameFieldFromTable;
         private Button create_NewDB;
         private Label label4;
         private TextBox create_TableNameField;
@@ -632,7 +1004,7 @@
         private TextBox read_TableName;
         private Label label8;
         private Label label9;
-        private TextBox read_NameBD;
+        private TextBox read_NameBDField;
         private Button read_readTableList;
         private TextBox connection_IdField;
         private Label label10;
@@ -640,16 +1012,42 @@
         private TextBox connection_DataBaseNameField;
         private Label label12;
         private Panel updatePanel;
-        private Button button2;
-        private TextBox textBox8;
+        private Button update_UpdateValue;
+        private TextBox update_TableNameField;
         private Label label13;
-        private TextBox textBox9;
+        private TextBox update_DBNameField;
         private Label label14;
         private Panel deletePanel;
-        private Button button1;
-        private TextBox textBox1;
+        private Button delete_DeleteTable;
+        private TextBox delete_TableNameField;
         private Label label15;
-        private TextBox textBox2;
+        private TextBox delete_DBNameField;
         private Label label16;
+        private Panel read_showColumnPanel;
+        private RadioButton radioButton2;
+        private RadioButton read_allColumns;
+        private Button read_readData;
+        private Button delete_DeleteRows;
+        private Label label17;
+        private TextBox delete_RowsValueField;
+        private Label label18;
+        private TextBox delete_ColumnNameField;
+        private Label connection_ErrorMassage;
+        private Label create_ErrorMassage;
+        private Label read_ErrorMassage;
+        private Label update_ErrorMassage;
+        private Label delete_ErrorMassage;
+        private TextBox update_NewValueField;
+        private Label label19;
+        private TextBox update_OldValueField;
+        private Label label20;
+        private TextBox update_ColumnNameField;
+        private Label label21;
+        private Button delete_DeleteDataBase;
+        private Label connection_SuccesfullMassage;
+        private Label create_SuccesfullMassage;
+        private Label read_SuccesfullMassage;
+        private Label update_SuccesfullMassage;
+        private Label delete_SuccesfullMassage;
     }
 }
