@@ -605,7 +605,7 @@ namespace InterfaceBD
                         connection.Open();
                         SqlCommand command = new SqlCommand();
 
-                        command.CommandText = $"DELETE FROM TABLE {delete_TableNameField.Text} WHERE {delete_ColumnNameField.Text} = '{delete_RowsValueField.Text}'";
+                        command.CommandText = $"DELETE FROM {delete_TableNameField.Text} WHERE {delete_ColumnNameField.Text} = '{delete_RowsValueField.Text}'";
 
                         command.Connection = connection;
 
