@@ -299,7 +299,7 @@ namespace InterfaceBD
                             connection.Close();
 
 
-                            TableList tableList = new TableList() { Text = InitialCatalog };
+                            TableList tableList = new TableList() { AutoSize = true, Text = InitialCatalog };
 
                             var table = new TableLayoutPanel()
                             {
@@ -311,27 +311,23 @@ namespace InterfaceBD
 
                             for (int i = 0; i < rowsValues.Count; i++)
                             {
-                                table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+                                table.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                             }
 
                             for (int i = 0; i < columnName.Count; i++)
                             {
-                                table.Controls.Add(new Label() { Text = columnName[i], Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericSansSerif, 11f, FontStyle.Bold) }, i, 0);
+                                table.Controls.Add(new Label() { AutoSize = true, Text = columnName[i], Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericSansSerif, 11f, FontStyle.Bold) }, i, 0);
                             }
 
                             for (int i = 0; i < rowsValues.Count; i++)
                             {
                                 for (int j = 0; j < rowsValues[i].Count; j++)
                                 {
-                                    table.Controls.Add(new Label() { Text = rowsValues[i][j], Dock = DockStyle.Fill }, j, i + 1);
+                                    table.Controls.Add(new Label() { AutoSize = true, Text = rowsValues[i][j], Dock = DockStyle.Fill }, j, i + 1);
                                 }
                             }
 
                             tableList.Controls.Add(table);
-
-                            tableList.Width = 500;
-                            tableList.Height = 30 * rowsValues.Count + 90;
-
                             tableList.Show();
 
                             read_SuccesfullMassage.Visible = true;
@@ -405,39 +401,36 @@ namespace InterfaceBD
                             connection.Close();
 
 
-                            TableList tableList = new TableList() { Text = InitialCatalog };
+                            TableList tableList = new TableList() { AutoSize = true, Text = read_TableNameField.Text };
 
                             var table = new TableLayoutPanel()
                             {
                                 CellBorderStyle = TableLayoutPanelCellBorderStyle.Single,
                                 RowCount = 0,
                                 ColumnCount = columnCount,
+                                AutoSize = true,
                                 Dock = DockStyle.Fill
                             };
 
                             for (int i = 0; i < rowsValues.Count; i++)
                             {
-                                table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+                                table.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                             }
 
                             for (int i = 0; i < columnName.Count; i++)
                             {
-                                table.Controls.Add(new Label() { Text = columnName[i], Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericSansSerif, 11f, FontStyle.Bold) }, i, 0);
+                                table.Controls.Add(new Label() { AutoSize = true, Text = columnName[i], Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericSansSerif, 11f, FontStyle.Bold) }, i, 0);
                             }
 
                             for (int i = 0; i < rowsValues.Count; i++)
                             {
                                 for (int j = 0; j < rowsValues[i].Count; j++)
                                 {
-                                    table.Controls.Add(new Label() { Text = rowsValues[i][j], Dock = DockStyle.Fill }, j, i + 1);
+                                    table.Controls.Add(new Label() { AutoSize = true, Text = rowsValues[i][j], Dock = DockStyle.Fill }, j, i + 1);
                                 }
                             }
 
                             tableList.Controls.Add(table);
-
-                            tableList.Width = 500;
-                            tableList.Height = 30 * rowsValues.Count + 90;
-
                             tableList.Show();
 
                             read_SuccesfullMassage.Visible = true;
@@ -550,7 +543,7 @@ namespace InterfaceBD
                 }
                 catch (Exception ex)
                 {
-                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message; 
+                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
                     delete_ErrorMassage.Visible = true;
                 }
             }
