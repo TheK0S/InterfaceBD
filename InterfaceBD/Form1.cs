@@ -8,7 +8,7 @@ namespace InterfaceBD
     {
         string? DataSource;
         string? InitialCatalog;
-                
+
         public Form1()
         {
             InitializeComponent();
@@ -17,6 +17,7 @@ namespace InterfaceBD
             Height = 500;
             connectionPanel.Dock = DockStyle.Fill;
             createPanel.Dock = DockStyle.Fill;
+            addPanel.Dock = DockStyle.Fill;
             readPanel.Dock = DockStyle.Fill;
             updatePanel.Dock = DockStyle.Fill;
             deletePanel.Dock = DockStyle.Fill;
@@ -35,13 +36,15 @@ namespace InterfaceBD
             connection.BackColor = Color.White;
 
             Create.BackColor = Color.Gainsboro;
+            add.BackColor = Color.Gainsboro;
             read.BackColor = Color.Gainsboro;
             update.BackColor = Color.Gainsboro;
             delete.BackColor = Color.Gainsboro;
 
             connectionPanel.Visible = true;
-            
+
             createPanel.Visible = false;
+            addPanel.Visible = false;
             readPanel.Visible = false;
             updatePanel.Visible = false;
             deletePanel.Visible = false;
@@ -51,15 +54,36 @@ namespace InterfaceBD
         {
             Create.BackColor = Color.White;
 
-            connection.BackColor = Color.Gainsboro;                        
+            connection.BackColor = Color.Gainsboro;
+            add.BackColor = Color.Gainsboro;
             read.BackColor = Color.Gainsboro;
             update.BackColor = Color.Gainsboro;
             delete.BackColor = Color.Gainsboro;
 
-            createPanel.Visible = true;            
+            createPanel.Visible = true;
 
             connectionPanel.Visible = false;
+            addPanel.Visible = false;
             readPanel.Visible = false;
+            updatePanel.Visible = false;
+            deletePanel.Visible = false;
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            add.BackColor = Color.White;
+
+            connection.BackColor = Color.Gainsboro;
+            read.BackColor = Color.Gainsboro;
+            Create.BackColor = Color.Gainsboro;
+            update.BackColor = Color.Gainsboro;
+            delete.BackColor = Color.Gainsboro;
+
+            addPanel.Visible = true;
+
+            readPanel.Visible = false;
+            connectionPanel.Visible = false;
+            createPanel.Visible = false;
             updatePanel.Visible = false;
             deletePanel.Visible = false;
         }
@@ -69,14 +93,16 @@ namespace InterfaceBD
             read.BackColor = Color.White;
 
             connection.BackColor = Color.Gainsboro;
-            Create.BackColor = Color.Gainsboro;            
+            Create.BackColor = Color.Gainsboro;
+            add.BackColor = Color.Gainsboro;
             update.BackColor = Color.Gainsboro;
             delete.BackColor = Color.Gainsboro;
 
             readPanel.Visible = true;
-            
+
             connectionPanel.Visible = false;
             createPanel.Visible = false;
+            addPanel.Visible = false;
             updatePanel.Visible = false;
             deletePanel.Visible = false;
         }
@@ -87,6 +113,7 @@ namespace InterfaceBD
 
             connection.BackColor = Color.Gainsboro;
             Create.BackColor = Color.Gainsboro;
+            add.BackColor = Color.Gainsboro;
             read.BackColor = Color.Gainsboro;
             delete.BackColor = Color.Gainsboro;
 
@@ -94,6 +121,7 @@ namespace InterfaceBD
 
             connectionPanel.Visible = false;
             createPanel.Visible = false;
+            addPanel.Visible = false;
             readPanel.Visible = false;
             deletePanel.Visible = false;
         }
@@ -104,13 +132,15 @@ namespace InterfaceBD
 
             connection.BackColor = Color.Gainsboro;
             Create.BackColor = Color.Gainsboro;
+            add.BackColor = Color.Gainsboro;
             read.BackColor = Color.Gainsboro;
             update.BackColor = Color.Gainsboro;
-            
-            deletePanel.Visible=true;
+
+            deletePanel.Visible = true;
 
             connectionPanel.Visible = false;
             createPanel.Visible = false;
+            addPanel.Visible = false;
             readPanel.Visible = false;
             updatePanel.Visible = false;
         }
@@ -132,7 +162,7 @@ namespace InterfaceBD
             else
             {
                 connection_ErrorMassage.Visible = false;
-            }                
+            }
         }
 
         private void connection_DataBaseNameField_TextChanged(object sender, EventArgs e)
@@ -169,11 +199,11 @@ namespace InterfaceBD
 
                     create_SuccesfullMassage.Visible = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     create_ErrorMassage.Visible = true;
-                    create_ErrorMassage.Text = "Ошибка при работе с базой данных";
-                }                
+                    create_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
+                }
             }
         }
 
@@ -206,12 +236,12 @@ namespace InterfaceBD
 
                     create_SuccesfullMassage.Visible = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     create_ErrorMassage.Visible = true;
-                    create_ErrorMassage.Text = "Ошибка при работе с базой данных";
+                    create_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
                 }
-            }                
+            }
         }
 
         private void read_readTableList_Click(object sender, EventArgs e)
@@ -220,7 +250,7 @@ namespace InterfaceBD
 
             if (InitialCatalog?.Length == 0 || DataSource?.Length == 0)
             {
-                if(DataSource != null)
+                if (DataSource != null)
                     read_ErrorMassage.Text = "Поле Имя базы данных не может быть пустым";
                 else
                     read_ErrorMassage.Text = "Поле Имя сервера не может быть пустым";
@@ -241,8 +271,8 @@ namespace InterfaceBD
                         command.Connection = connection;
 
                         SqlDataReader reader = command.ExecuteReader();
-                                            
-                        if(reader.HasRows)
+
+                        if (reader.HasRows)
                         {
                             int columnCount = reader.FieldCount;
 
@@ -286,7 +316,7 @@ namespace InterfaceBD
 
                             for (int i = 0; i < columnName.Count; i++)
                             {
-                                table.Controls.Add(new Label() { Text = columnName[i], Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericSansSerif,11f, FontStyle.Bold) }, i, 0);
+                                table.Controls.Add(new Label() { Text = columnName[i], Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericSansSerif, 11f, FontStyle.Bold) }, i, 0);
                             }
 
                             for (int i = 0; i < rowsValues.Count; i++)
@@ -308,12 +338,12 @@ namespace InterfaceBD
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     read_ErrorMassage.Visible = true;
-                    read_ErrorMassage.Text = "Ошибка при работе с базой данных";
+                    read_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
                 }
-            }                
+            }
         }
 
         private void read_readData_Click(object sender, EventArgs e)
@@ -322,7 +352,7 @@ namespace InterfaceBD
 
             if (InitialCatalog?.Length == 0 || read_TableNameField.Text?.Length == 0)
             {
-                if(DataSource != null)
+                if (DataSource != null)
                     read_ErrorMassage.Text = "Поле Имя базы данных не может быть пустым";
                 else
                     read_ErrorMassage.Text = "Поле Имя сервера не может быть пустым";
@@ -339,9 +369,9 @@ namespace InterfaceBD
                         connection.Open();
                         SqlCommand command = new SqlCommand();
 
-                        if(read_allColumns.Checked)
+                        if (read_allColumns.Checked)
                             command.CommandText = $"SELECT * FROM {read_TableNameField.Text}";
-                        if(read_customColumns.Checked)
+                        if (read_customColumns.Checked)
                             command.CommandText = $"SELECT {read_ColumnsNameField.Text} FROM {read_TableNameField.Text}";
 
                         command.Connection = connection;
@@ -414,18 +444,18 @@ namespace InterfaceBD
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     read_ErrorMassage.Visible = true;
-                    read_ErrorMassage.Text = "Ошибка при работе с базой данных";
+                    read_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
                 }
-            }                
+            }
         }
 
         private void update_UpdateValue_Click(object sender, EventArgs e)
         {
             InitialCatalog = update_DBNameField.Text;
-            if(DataSource?.Length == 0)
+            if (DataSource?.Length == 0)
             {
                 update_ErrorMassage.Text = "Поле Имя сервера должно быть заполнено";
                 update_ErrorMassage.Visible = true;
@@ -435,7 +465,7 @@ namespace InterfaceBD
                 update_ErrorMassage.Visible = false;
             }
 
-            if(InitialCatalog?.Length == 0 || update_TableNameField.Text?.Length == 0 || update_ColumnNameField.Text?.Length == 0
+            if (InitialCatalog?.Length == 0 || update_TableNameField.Text?.Length == 0 || update_ColumnNameField.Text?.Length == 0
                 || update_NewValueField.Text?.Length == 0 || update_FilterColumnNameField.Text?.Length == 0 || update_FilterColumnValueField.Text?.Length == 0)
             {
                 update_ErrorMassage.Text = "Все поля должны быть заполнены";
@@ -464,9 +494,9 @@ namespace InterfaceBD
 
                     update_SuccesfullMassage.Visible = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    update_ErrorMassage.Text = "Ошибка при работе с базой данных";
+                    update_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
                     update_ErrorMassage.Visible = true;
                 }
             }
@@ -518,9 +548,9 @@ namespace InterfaceBD
 
                     update_SuccesfullMassage.Visible = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных";
+                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message; 
                     delete_ErrorMassage.Visible = true;
                 }
             }
@@ -567,9 +597,9 @@ namespace InterfaceBD
 
                     delete_SuccesfullMassage.Visible = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных";
+                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
                     delete_ErrorMassage.Visible = true;
                 }
             }
@@ -616,9 +646,9 @@ namespace InterfaceBD
 
                     delete_SuccesfullMassage.Visible = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных";
+                    delete_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message; ;
                     delete_ErrorMassage.Visible = true;
                 }
             }
@@ -663,6 +693,60 @@ namespace InterfaceBD
 
             read_ColumnsNameField.Visible = true;
             read_labelColumnName.Visible = true;
+        }
+
+        private void add_addEntry_Click(object sender, EventArgs e)
+        {
+            InitialCatalog = add_NameBDField.Text;
+
+            if (DataSource?.Length == 0)
+            {
+                add_ErrorMassage.Text = "Поле Имя базы данных должно быть заполнено";
+                add_ErrorMassage.Visible = true;
+            }
+            else
+            {
+                add_ErrorMassage.Visible = false;
+            }
+
+            if (InitialCatalog?.Length == 0)
+            {
+                add_ErrorMassage.Text = "Все поля должны быть заполнены";
+                add_ErrorMassage.Visible = true;
+            }
+            else
+            {
+                delete_ErrorMassage.Visible = false;
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(GetConnectionString(DataSource, InitialCatalog)))
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand();
+
+                        command.CommandText = $"INSERT INTO {add_TableNameField.Text} ({add_ColumnNameField.Text}) VALUES ('{add_ColumnValues.Text.Replace(",", "','")}')";
+
+                        command.Connection = connection;
+
+                        command.ExecuteNonQuery();
+
+                        connection.Close();
+                    }
+
+                    add_SuccesfullMassage.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    add_ErrorMassage.Text = "Ошибка при работе с базой данных " + ex.Message;
+                    add_ErrorMassage.Visible = true;
+                }
+            }
+        }
+
+        private void add_SuccesfullMassage_Click(object sender, EventArgs e)
+        {
+            add_SuccesfullMassage.Visible = false;
         }
     }
 }
